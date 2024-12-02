@@ -39,6 +39,7 @@
             </div>
             <?php
 				// $do=$_GET['do']??'main';
+				// 如果localhost/?do=，＝後面如果亂打的話,轉入main.php
 				// 三元運算式
 				// 是issat時才可以寫的簡寫
 
