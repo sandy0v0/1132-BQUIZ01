@@ -38,8 +38,20 @@
                 </div>
             </div>
             <?php
-			
-			include "./front/main.php";
+				// $do=$_GET['do']??'main';
+				// 三元運算式
+				// 是issat時才可以寫的簡寫
+
+				$do=$_GET['do']??'main';
+				$file="./front/{$do}.php";
+				if(file_exists($file)){
+					include $file;
+				}else{
+					include "./front/main.php";
+				}
+
+				//include (file_exists($file))?$file:"./front/main.php";
+
 			?>
             <div class="di di ad" style="height:540px; width:23%; padding:0px; margin-left:22px; float:left; ">
                 <!--右邊-->
