@@ -12,7 +12,7 @@
         </tbody>
     </table>
     <div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;">
-        <p class="t cent botli">動態文字廣告管理</p>
+        <p class="t cent botli">動畫圖片管理</p>
         <form method="post" action="./api/edit_<?=$do;?>.php">
             <table width="100%">
                 <tbody>
@@ -25,6 +25,8 @@
                     </tr>
                 </tbody>
             </table>
+
+            <!-- [#39;] 代表['] -->
             <table style="margin-top:40px; width:70%;">
                 <tbody>
                     <tr>
