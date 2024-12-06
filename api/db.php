@@ -173,6 +173,9 @@ function to($url){
 
 $Title=new DB('titles');
 $Ad=new DB('ads');
+$Images=new DB('images');
+$Mvim=new DB('mvims');
+
 
 // 你要抓的資料庫為(classes)，所以要注意抓的地方是哪裡
 // new DB 在做實體化，把藍圖的功能實體化
