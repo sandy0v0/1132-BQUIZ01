@@ -72,7 +72,7 @@ class DB{
                 $sql="INSERT INTO $this->table (`".join("`,`",$cols)."`) VALUES('".join("','",$array)."')";
                 // return $this->pdo->exec($sql);
             }
-            // echo $sql;
+             echo $sql;
             return $this->pdo->exec($sql);
         }
 
@@ -172,6 +172,7 @@ function to($url){
 
 
 $Title=new DB('titles');
+$Ad=new DB('ads');
 
 // 你要抓的資料庫為(classes)，所以要注意抓的地方是哪裡
 // new DB 在做實體化，把藍圖的功能實體化
