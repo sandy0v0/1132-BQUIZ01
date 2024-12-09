@@ -173,7 +173,7 @@ function to($url){
 
 $Title=new DB('titles');
 $Ad=new DB('ads');
-$Images=new DB('images');
+$Image=new DB('images');
 $Mvim=new DB('mvims');
 
 
