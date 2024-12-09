@@ -23,14 +23,15 @@
                     </tr>
                     <?php
                     $rows=$Admin->all();
-                    foreach($rows as $row){                  
+                    foreach($rows as $row){           
+                        // if($row['acc']!='admin'){   如果你想判斷如果使用者不是admin就不讓它進來    
                     ?>
                     <tr>                       
                         <td>
                             <input type="text" name="acc[]"  value="<?=$row['acc'];?>">
                         </td>
                         <td>
-                            <input type="text" name="pw[]" value="<?=$row['pw'];?>" >    
+                            <input type="password" name="pw[]" value="<?=$row['pw'];?>" >    
                         </td>
                         <td>
                             <input type="checkbox" name="del[]" value="<?=$row['id'];?>">    
@@ -39,6 +40,7 @@
                     </tr>
                     <?php
                     }
+                // }
                     ?>
                 </tbody>
             </table>
