@@ -14,7 +14,7 @@
     <div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;">
         <p class="t cent botli">網站標題管理</p>
         <form method="post" action="./api/edit.php">
-            <table width="100%">
+            <table width="100%" >
                 <tbody>
                     <tr class="yel">
                         <td width="45%">網站標題</td>
@@ -42,7 +42,7 @@
                         </td>
                         <td>
                             <input type="button" 
-                                onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;./modal/upload_<?=$do;?>.php?id=<?=$row['id'];?>&#39;)"
+                                onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;./modal/upload_<?=$do;?>.php?id=<?=$row['id'];?>&table=<?=$do;?>&#39;)"
                                   value="更新圖片">
                         </td>
                         <input type="hidden" name="id[]" value="<?=$row['id'];?>">
