@@ -1,7 +1,7 @@
 <h3 class="cent">新增管理者帳號</h3>
 <hr>
 <form action="api/insert.php" method="post" enctype="multipart/form-data" class='cent'>
-    <table style="width:70%;margin:auto">
+    <table style="width:70%;margin:auto" id="menu">
         <tr>
             <td>次選單名稱：</td>
             <td>次選單連結網址：</td>
@@ -12,12 +12,30 @@
             <td><input type="text" name="href" id="href"></td>
             <td><input type="checkbox" name="del[]"></td>
         </tr>
-
     </table>
     <div class="cent">
 
         <input type="submit" value="新增">
         <input type="reset" value="重置">
-        <input type="button" value="更多次選單">
+        <input type="button" value="更多次選單"
+        onclick="more()">        
     </div>
 </form>
+
+<script>
+    // 如果要新增更多次選單，記得前後用［‵］單引號
+    // $("#menu").append(` <tr>
+    //     <td><input type="text" name="text" id="text"></td>
+    //     <td><input type="text" name="href" id="href"></td>
+    //     <td></td>
+    // </tr>`)
+
+function more(){
+    let row=`<tr>
+                <td><input type="text" name="text" id="text"></td>
+                <td><input type="text" name="href" id="href"></td>
+                <td></td>
+            </tr>`
+    $("#menu").append(row);
+}
+</script>
