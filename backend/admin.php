@@ -12,26 +12,25 @@
         </tbody>
     </table>
     <div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;">
-        <p class="t cent botli">最新消息資料內容管理</p>
+        <p class="t cent botli">管理者帳號管理</p>
         <form method="post" action="./api/edit.php">
             <table width="100%">
                 <tbody>
                     <tr class="yel">                      
-                        <td width="80%">最新消息資料內容</td>
-                        <td width="10%">顯示</td>
+                        <td width="45%">帳號</td>
+                        <td width="45%">密碼</td>
                         <td width="10%">刪除</td>
                     </tr>
                     <?php
-                    // $db=ucfirst($do); (如果你想要自己在做大小寫的話)
-                    $rows=$News->all();
+                    $rows=$Admin->all();
                     foreach($rows as $row){                  
                     ?>
                     <tr>                       
                         <td>
-                            <textarea name="text[]" style="width:95%;hight:60px;"><?=$row['text'];?></textarea>
+                            <input type="text" name="acc[]"  value="<?=$row['acc'];?>">
                         </td>
                         <td>
-                            <input type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>>    
+                            <input type="text" name="pw[]" value="<?=$row['pw'];?>" >    
                         </td>
                         <td>
                             <input type="checkbox" name="del[]" value="<?=$row['id'];?>">    
@@ -51,7 +50,7 @@
                         <td width="200px">
                             <input type="button"
                                 onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;./modal/<?=$do;?>.php?table=<?=$do;?>&#39;)"
-                                value="新增最新消息資料">
+                                value="新增管理者帳號">
                         </td>
                         <td class="cent">
                             <input type="hidden" name="table" value="<?=$do;?>">
