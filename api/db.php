@@ -175,6 +175,7 @@ $Title=new DB('titles');
 $Ad=new DB('ads');
 $Image=new DB('images');
 $Mvim=new DB('mvims');
+$News=new DB('news');
 
 
 // 你要抓的資料庫為(classes)，所以要注意抓的地方是哪裡
