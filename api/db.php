@@ -179,6 +179,7 @@ $News=new DB('news');
 $Admin=new DB('admins');
 $Menu=new DB('menus');
 $Total=new DB('total');
+$Bottom=new DB('bottom');
 
 
 // 你要抓的資料庫為(classes)，所以要注意抓的地方是哪裡
