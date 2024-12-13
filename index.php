@@ -23,7 +23,8 @@
     </div>
     
     <div id="main">
-        <a title="" href="index.php">
+        <!-- 在A標籤裡面,標準的替代文字,應該是alt,當你圖片發生問題的時候所出現的文字 -->
+        <a title="<?=$Title->find(['sh'=>1])['text'];?>" href="index.php">
             <div class="ti" style="background:url('./upload/<?=$Title->find(['sh'=>1])['img'];?>'); background-size:cover;"></div>
             <!--標題-->
         </a>
