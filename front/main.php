@@ -35,7 +35,12 @@
         // 每間隔3秒，執行ww()程式
         // setInterval 是非同步的機制
         setInterval("ww()", 3000);
+        ww();
         // now = 1;
+    }else if(lin.length<=0){
+        $("#mwww").html("沒有可顯示的動畫圖片資料，請確認動畫圖片顯示");
+    }else{
+        ww();
     }
 
     function ww() {
@@ -47,7 +52,6 @@
             now = 0;
     }
 
-    ww();
     </script>
 
     <div
