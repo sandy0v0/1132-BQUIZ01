@@ -69,8 +69,7 @@
         <!-- ul裡面要放li，代表有序的清單 -->
         </span>
         <!-- <ol class="ssaa" style="list-style-type:decimal;" > -->
-        <ol class="ssaa" style="list-style-type:decimal;">
-        
+        <ul class="ssaa" style="list-style-type:decimal;">
             <?php
                 $all_news=$News->all(['sh'=>1]," limit 5");
                 foreach($all_news as $n){
@@ -83,7 +82,7 @@
                 }
             ?>
 
-        </ol>
+        </ul>
         <!-- position: absolute　絕對定位 -->
         <!-- 先不顯示，滑鼠移過之後再顯示，此為彈出視窗 -->
         <div id="altt"
