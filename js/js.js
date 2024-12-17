@@ -1,7 +1,8 @@
-// JavaScript Document
+// JavaScript Document 
 $(document).ready(function (e) {
 	$(".mainmu").mouseover(
 		function () {
+			// $(this)現在這一層的下一層(children)
 			$(this).children(".mw").stop().show()
 		}
 	)

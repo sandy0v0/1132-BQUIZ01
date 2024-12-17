@@ -40,6 +40,19 @@
                             echo "<a href='{$main['href']}'>";
                             echo $main['text'];
                             echo "</a>";
+                            echo "<div class='mw'>";
+                            // 找這個id主選單有沒有一樣的main_id，表示該id有次選單
+                            if($Menu->count(['main_id'=>$main['id']])>0){
+                                $subs=$Menu->all(['main_id'=>$main['id']]);
+                                foreach($subs as $sub){
+                                    echo "<div class='mainmu2 cent'>";
+                                    echo "<a href='{$sub['href']}'>";
+                                    echo $sub['text'];  
+                                    echo "</a>";
+                                    echo "</div>";
+                                }
+                            }
+                            echo "</div>";
                             echo "</div>";
                         }
 
