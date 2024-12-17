@@ -7,7 +7,8 @@
     <h3>更多最新消息資料區</h3>
     <hr>
     <?php
-
+        // 去backend的news複製第26行以下程式碼，可以通用
+        // 代表一頁顯示幾筆資料的意思，這裡要求顯示5筆
         $div=5;
         $total=$News->count();
         $pages=ceil($total/$div);
@@ -17,7 +18,8 @@
         echo "<ol start='".($start+1)."'>";
 
     foreach($rows as $row){
-        echo "<li>";
+        // 代表在滑鼠滑到該訊息時，於後方顯示完整內容'sswww'
+        echo "<li class='sswww'>";
         echo mb_substr($row['text'],0,20);
         echo "<span class='all' style='display:none'>";
         echo $row['text'];
@@ -60,8 +62,8 @@
 $(".sswww").hover(
     function() {
         $("#alt").html("<pre>" + $(this).children(".all").html() + "</pre>").css({
-            "top": $(this).offset().top + 50
-            // 把他在的位置抓出來-50(往下降50)
+            "top": $(this).offset().top - 30
+            // 把他在的位置抓出來-50(往下降50)，覺得想美觀一點可以改-30
         })
         $("#alt").show()
     }
