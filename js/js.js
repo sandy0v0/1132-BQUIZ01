@@ -2,7 +2,7 @@
 $(document).ready(function (e) {
 	$(".mainmu").mouseover(
 		function () {
-			// $(this)現在這一層的下一層(children)
+			// $(this)現在這一層的下一層(children)叫.mw的
 			$(this).children(".mw").stop().show()
 		}
 	)
