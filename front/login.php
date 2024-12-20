@@ -1,7 +1,19 @@
 <?php
 // 登入畫面，有20分，可以先做
+if(isset($_SESSION['login'])){
+	to("admin.php");
+	exit();	
+}
+
 if(isset($_POST['acc'])) {
-    if($_POST['acc']=='admin' && $_POST['ps']=='1234'){
+    // 我表單的資料設定叫name是ps [同頁面的這段<input name="ps" type="password">]
+    $row=$Admin->find(['acc'=>$_POST['acc'],'pw'=>$_POST['ps']]);
+    // 我只要確認row不是空的，我的acc跟pw有=我設定的帳密，因為我上面已經判斷一次是否符合，所以我下面這段可不用再寫一次
+    // if(!empty($row) && $row['acc']==$_POST['acc'] && $row['pw']==$_POST['ps']){
+
+    // 只要不是空的，就判斷他登入成功
+    if(!empty($row)){
+        // session_start();
         $_SESSION['login']=1;
         to("admin.php");
     }else{
