@@ -74,7 +74,7 @@ class DB{
                 $sql="INSERT INTO $this->table (`".join("`,`",$cols)."`) VALUES('".join("','",$array)."')";
                 // return $this->pdo->exec($sql);
             }
-             echo $sql;
+            //  echo $sql;
             return $this->pdo->exec($sql);
         }
 
@@ -184,15 +184,26 @@ $Total=new DB('total');
 $Bottom=new DB('bottom');
 
 
-// 用SESSION記錄訪客瀏覽，如果
-
 if(!isset($_SESSION['view'])){
-    echo "Hi~ 歡迎第一次來訪~ (○︎´∀︎`○︎)ﾉ";
     $_SESSION['view']=1;
-}else{
-    echo "Hi~ 歡迎再次來訪~ (⑅˃◡˂⑅)ﾉ";
+    $total=$Total->find(1);
+    $total['total']++;
+    $Total->save($total);
 }
 
+
+// ---------------------------------------------
+
+// 用SESSION記錄訪客瀏覽，如果他用同個瀏覽器瀏覽，沒有關掉的話，都算一次，才不會每更換一個頁面就重複計算人數
+
+// if(!isset($_SESSION['view'])){
+//     echo "Hi~ 歡迎第一次來訪~ (○︎´∀︎`○︎)ﾉ";
+//     $_SESSION['view']=1;
+// }else{
+//     echo "Hi~ 歡迎再次來訪~ (⑅˃◡˂⑅)ﾉ";
+// }
+
+// ---------------------------------------------
 
 // 你要抓的資料庫為(classes)，所以要注意抓的地方是哪裡
 // new DB 在做實體化，把藍圖的功能實體化
