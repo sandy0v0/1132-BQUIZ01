@@ -1,5 +1,5 @@
 ﻿﻿<?php include_once "api/db.php";
-session_start();
+// session_start();
 if(!isset($_SESSION['login'])){
     echo "請從登入頁登入<a href='index.php?do=login'>管理登入</a>";
     // 加上exit的原因，是為了避免有人直接用localhost/admin.php登入，如果沒有在登入頁面輸入帳密登入就執行踢出

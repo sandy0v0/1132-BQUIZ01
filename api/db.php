@@ -5,7 +5,7 @@
 session_start();
 
 class DB{
-    protected $dsn="mysql:host=localhost;charset=utf8;dbname=db14";
+    protected $dsn="mysql:host=localhost;charset=utf8;dbname=db14-1";
     protected $pdo;
     protected $table;
 
@@ -158,7 +158,7 @@ protected function fetchALL($sql){
 
 
 function q($sql){
-    $pdo=new PDO ("mysql:host=localhost;charset=utf8;dbname=db14",'root','');
+    $pdo=new PDO ("mysql:host=localhost;charset=utf8;dbname=db14-1",'root','');
         return $pdo->query($sql)->fetchAll();
     }
 
